@@ -1,11 +1,12 @@
 # Juego de Nave con C++
+
 Destruye y esquiva asteroides
 
 ## DESCRIPCIÓN DEL PROYECTO
 
 Este proyecto es un juego de naves en C++. Evita chocar con los asteroides y destrúyelos para sumar puntos. La dificultad sube con el nivel.
 
-![prueba](https://user-images.githubusercontent.com/49569043/113387035-1e9a6100-9351-11eb-8f40-05a49aa4ba0d.JPG)
+prueba
 
 ## CONTROLES
 
@@ -30,13 +31,15 @@ g++ -o nave.exe nave.cpp
 .\nave.exe
 ```
 
+
+
 ### Compilar con Docker (sin instalar MinGW en el host)
 
 Requiere Docker. El contenedor usa MinGW para generar `nave.exe`; el juego se ejecuta en Windows, no dentro del contenedor.
 
 ```powershell
 docker build -t naves-cpp .
-docker create --name naves-out naves-cpp
+docker create --name naves-out naves-cpp /nave.exe
 docker cp naves-out:/nave.exe .
 docker rm naves-out
 .\nave.exe
@@ -49,6 +52,8 @@ docker build --output type=local,dest=./out .
 .\out\nave.exe
 ```
 
+
+
 ## REFERENCIAS
 
-Esta aplicación se basó en el tutorial *Curso Juego de Naves en C++* del canal de YouTube *codigofacilito*: https://www.youtube.com/playlist?list=PLpOqH6AE0tNj8W0EGpoGG2CEMDJTt4ihZ
+Esta aplicación se basó en el tutorial *Curso Juego de Naves en C++* del canal de YouTube *codigofacilito*: [https://www.youtube.com/playlist?list=PLpOqH6AE0tNj8W0EGpoGG2CEMDJTt4ihZ](https://www.youtube.com/playlist?list=PLpOqH6AE0tNj8W0EGpoGG2CEMDJTt4ihZ)
