@@ -1,0 +1,12 @@
+.git
+.gitignore
+.gitattributes
+nave.exe
+nave.obj
+*.JPG
+*.jpg
+*.png
+README.md
+LICENSE
+Dockerfile
+.dockerignore

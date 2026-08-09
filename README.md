@@ -30,6 +30,25 @@ g++ -o nave.exe nave.cpp
 .\nave.exe
 ```
 
+### Compilar con Docker (sin instalar MinGW en el host)
+
+Requiere Docker. El contenedor usa MinGW para generar `nave.exe`; el juego se ejecuta en Windows, no dentro del contenedor.
+
+```powershell
+docker build -t naves-cpp .
+docker create --name naves-out naves-cpp
+docker cp naves-out:/nave.exe .
+docker rm naves-out
+.\nave.exe
+```
+
+Con BuildKit, también puedes exportar el binario a una carpeta local:
+
+```powershell
+docker build --output type=local,dest=./out .
+.\out\nave.exe
+```
+
 ## REFERENCIAS
 
 Esta aplicación se basó en el tutorial *Curso Juego de Naves en C++* del canal de YouTube *codigofacilito*: https://www.youtube.com/playlist?list=PLpOqH6AE0tNj8W0EGpoGG2CEMDJTt4ihZ
